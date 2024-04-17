@@ -1,0 +1,311 @@
+
+What is Protractor
+What is Angular and AngularJS
+What is WebdriverJS
+
+Protractor is an end-to-end test framework for Angular and AngularJS applications
+Protractor is a Node.js program built on top of WebDriverJS
+Protractor runs tests against your application running in a real browser, interacting with it as a user would
+Protractor can also be used to test non-angular applications
+
+What is AngularJS
+AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google
+Type - Open-source web application framework
+Written in - JavaScript
+Developed by - Google
+Initial release - Oct 2010
+
+Also referred to as Angular 1
+
+What is Angular
+Angular is a platform and framework for building client applications in HTML and TypeScript. Angular is written in TypeScript
+Type - Open-source web application framework
+Written in - TypeScript
+Developed by - Google
+Initial release - Sep 2016
+
+Also referred to as Angular 2+ or Angular v2 and above
+
+Why there is no ver 3 of Angular 
+The angular router was on version 3.x before Angular 3 would have been released. 
+The new ver. when released would have gone with router ver 4.x
+
+In an effort to prevent confusion they skipped Angular 3 and scheduled Angular 4 to coincide with Angular router 4
+  
+
+ • Igor Minar - Opening Keynote - Versio...  
+
+What is Node.js
+platform to develop server-side networking applications
+is open source
+is cross-platform
+
+Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
+
+What is WebDriverJS
+Protractor is built on top of WebDriverJS
+
+WebDriverJs is the Official javascript implementation of selenium
+WebDriverJs helps to interact with elements on the web
+Protractor extends WebDriverJS functionalities to enable automation of user actions on browser applications
+
+1. Selenium webdriver does not have methods/features to locate elements based on Angular specific properties/locators
+
+Protractor is a wrapper over Selenium webdriverjs and provides support to find angular specific elements
+
+2. Synchronization issues while automating Angular (JS) applications with Selenium webdriver
+
+3. A lot of web applications these days are created with Angular and AngularJS
+
+Synchronous programming
+In a synchronous programming model, things happen one at a time. 
+Each operation has to wait for the previous one to be completed, before it can be executed.
+Asynchronous programming
+An asynchronous model allows multiple things to happen at the same time. Operations can be executed WHILE the query is being processed.
+1.Test scripts send commands to the Selenium Server
+2.Selenium Server interacts with Browser Drivers
+3.Browser Drivers interact with application on the real browser
+
+On execution, test commands goes to selenium server.
+Server interprets these commands
+After interpretation, server sends commands to browser drivers
+Communication between server and browser happen through JSON Wire protocol
+Commands are interpreted by browser drivers and executed on the application running on real browsers
+
+Before performing any action on the browser, Protractor runs extra commands to ensure the application has stabilized
+This will result in 3 commands being sent to browser driver
+/session/:sessionId/execute_async 
+/session/:sessionId/element
+/session/:sessionId/element/:id/click 
+Step 1 : Download and install node.js
+ https://nodejs.org/en/download/
+ node -v
+ npm -v
+
+Step 2 : Install Protractor
+ npm install -g protractor
+ protractor --version
+
+Step 3 : Run command
+ webdriver-manager update
+
+Step 4 : Find conf.js file at C:\Users\Administrator\AppData\Roaming\npm\node_modules\protractor\example
+
+On cmd goto the location of this file
+and run command
+protractor conf.js
+Webstorm
+Eclipse
+Visual Studio Code
+
+Step 1 : Download and install Visual Studio Code
+ https://code.visualstudio.com/download#
+
+Step 2 : Open VS Code
+
+Step 3 : Install support for JavaScript and TypeScript
+
+Step 4 : Create a new folder and open in VS Code explorer
+
+Step 5 : Inside ProtractorDemo folder create 2 folders
+ conf
+ tests
+
+note : protractor uses jasmine test framework by default
+Just in case you need to install jasmine use the command
+npm install --save-dev jasmine
+
+Step 6 : Goto the folder 
+  C:\Users\Administrator\AppData\Roaming\npm\node_modules\protractor\example
+
+Copy conf.js into conf folder in VSCode
+Copy example_spec.js into tests folder in VSCode
+
+Step 7 : In conf.js update location of spec file
+
+Step 8 : Run conf.js in protractor
+ protractor conf.js
+
+1. How to create a test file
+2. How to add steps in test file
+3. How to add element locators
+4. How to run test
+conf.js - configurations like browser, framework, etc
+spec.js - tests are present in spec file
+References
+Demo application - http://juliemr.github.io/protractor-d...
+
+Protractor API - https://www.protractortest.org/#/api
+prerequisite -   
+
+ • Protractor Beginner Tutorials  
+
+Jasmine cheatsheet - https://devhints.io/jasmine
+
+VS Code extension : Protractor snippets - https://marketplace.visualstudio.com/...
+
+Protractor tutorial - https://www.protractortest.org/#/tuto...
+
+Today we will learn:
+1. How to find elements on webpage for Angular applications
+2. Types of locators
+3. Locator strategies
+4. Demo
+5. Tips & Tricks
+
+Finding elements on webpage and taking action on them
+Protractor exposed 2 global func
+
+element     - finds a single element
+element.all - finds multiple elements
+
+element(by.model('first')).sendKeys('3')
+
+References:
+https://juliemr.github.io/protractor-...
+https://www.protractortest.org/#/api
+https://www.protractortest.org/#/loca...
+https://gist.github.com/javierarques/...
+
+This will help to learn how to create locators for angular elements
+https://www.lambdatest.com/blog/selen...
+http://www.webdriverjs.com/protractor...
+https://www.seleniumeasy.com/protract...
+https://www.agiratech.com/locators-el...
+https://dzone.com/articles/webdriver-...
+ 
+
+ / locators-in-protractor  
+
+oday we will learn:
+1. What is POM
+2. How to implement POM in protractor framework
+3. Demo
+
+1. We separate objects/element locators and actions in separate files
+2. We create one file for each web page
+3. Test Scripts can refer element locators and actions from these files
+
+Today we will learn
+How to generate screenshots and html report with screenshots
+
+Step 1 : Goto https://www.npmjs.com/package/protrac...
+Run command
+npm install protractor-jasmine2-screenshot-reporter --save-dev
+
+Step 2 : Copy the content in conf.js file
+
+Step 3 : Save and Run
+
+1. How to add allure reports
+2. How to run allure command line to generate html reports
+
+Step 1 : Install jasmine allure reports plugin
+
+https://www.npmjs.com/package/jasmine...
+
+npm i jasmine-allure-reporter
+
+Step 2 : Add data in conf.js
+
+Step 3 : Run conf.js and check allure-reports are generated
+
+Step 4 : Add allure command line tool
+
+https://www.npmjs.com/package/allure-...
+
+npm i allure-commandline
+
+Today we will learn
+1. How to generate HTML reports 
+2. How to embed screenshots on failure in html report
+
+Step 1 : Get protractor html reporter
+
+https://www.npmjs.com/package/protrac...
+
+npm i protractor-html-reporter-2
+
+Step 2 : Add data in conf.js file
+
+Step 3 : Run conf.js and check reports generated
+
+Step 4 : Add data to take screenshots on failure as mentioned on the website
+
+Step 5: Run and check reports
+Today we will learn:
+1. How to add an existing vs code project to git and GitHub
+2. How to do commit and push whenever changes happen
+3. How to clone from GitHub to vs code
+4. How to remove the project from git
+
+Step 1: Check if git is installed on your system
+git --version
+
+Step 2: Install git on your system
+https://git-scm.com/download/
+
+Step 3: Go to https://github.com/ and signup & login
+
+Step 4: Create a new repository on GitHub
+
+Step 5: Goto VS Code and goto settings
+Check for git path & git enabled options
+
+Step 6: Goto version control section and initialize git repository
+
+Step 7: Commit changes to git
+
+Step 8: Add remote repository url
+
+Note: If prompted add username and email
+
+1. Set your username:git config --global user.name “Raghav-Pal”
+2. Set your email address:git config --global user.email “automation.devops@gmail.com”
+
+Step 9: Push changes to GitHub
+
+Step 10: Whenever you make changes, commit and push
+
+My Protractor Framework Project on GitHub https://github.com/Raghav-Pal/Protrac...
+
+References
+https://code.visualstudio.com/docs/ed...
+
+Today we will learn:
+1. How to setup Jenkins
+2. How to create jobs in Jenkins
+3. How to run Protractor tests
+
+Step 1: Download Jenkins from https://jenkins.io/download/
+
+Step 2: Start jenkins
+   Goto cmd and cd to the location of jenkins.war file
+
+java -jar jenkins.war   //8080
+java -jar jenkins.war --httpPort=9191
+
+Step 3: Create a new job
+
+Step 4: Add commands in Jenkins Job
+
+Step 5: Run and check
+Today we will learn:
+How to get project from GitHub on Jenkins
+
+References 
+Protractor with Jenkins -   
+
+ • Protractor Beginner Tutorials  
+
+oday we will learn
+How to publish allure report on Jenkins
+
+Step 1: Add allure plugin in Jenkins
+
+Step 2: Add allure command line in Global Tools Configuration
+
+Step 3: In Job config add post build action - Allure Reports
+
+Step 4: Run job and check allure reports
+
