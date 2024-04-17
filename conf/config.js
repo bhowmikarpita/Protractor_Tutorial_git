@@ -18,7 +18,7 @@ exports.config = {
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
-  // Spec patterns are relative to the current working directory.
+  // Spec patterns are relative to the current working directory
   // protractor is called.
   specs: ['../tests/calculator.js'],
 
