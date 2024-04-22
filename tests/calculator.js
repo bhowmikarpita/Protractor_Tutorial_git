@@ -8,7 +8,7 @@ describe('calculator tests', function () {
         homepage.enterFirstNum(12);
         element(by.model('second')).sendKeys('2');
         homepage.clickGo();
-        homepage.verifyResult('114');
+        homepage.verifyResult('14');
 
 
 
